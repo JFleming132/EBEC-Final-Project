@@ -172,7 +172,7 @@ def main():
                             if len(letterChoice) > 1:
                                 print("Please enter exactly one character.")
                             elif letterChoice.lower().isalpha() != True:
-                                print(f"The character {input} is not a letter.")
+                                print(f"The character {str(input)} is not a letter.")
                             elif letterChoice.lower() not in "aeiou":
                                 print("Consonants cannot be purchased.")
                             elif letterChoice.upper() not in unboughtVowels:
