@@ -207,7 +207,7 @@ def main():
                     break #go to end of round
 
                 else:
-                    print("Please input an appropriate choice.")
+                    print(f"\"{choice}.\" is an invalid choice.")
                     continue
 
 
