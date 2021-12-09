@@ -231,9 +231,9 @@ def main():
             if doConsonantReplace:
                 currentPhraseLettersList = string_to_list(currentPhrase)
                 if (currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower()))) == 1:
-                    print(f"There is one {letterChoice.upper()}, which earns you ${space}.")
+                    print(f"There is 1 {letterChoice.upper()}, which earns you ${space:,.0f}.")
                 elif (currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower()))) >= 1:
-                    print(f"There are {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}\'s, which earns you ${space*currentPhraseLettersList.count(letterChoice)}.")
+                    print(f"There are {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}\'s, which earns you ${(space*currentPhraseLettersList.count(letterChoice)):,.0f}.")
                 else:
                     print("something has been evaluated incorrectly")
                 wallet += space*(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))
