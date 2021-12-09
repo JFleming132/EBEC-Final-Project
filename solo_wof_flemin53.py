@@ -164,7 +164,7 @@ def main():
 
                 elif choice == "2":
                     if unboughtVowels == "     ":
-                        print("There are no more vowels left to buy.")
+                        print("There are no more vowels to buy.")
                         break
                     if wallet > 275:
                         while True:
