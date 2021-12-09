@@ -95,7 +95,7 @@ def main():
         #beginning of round!
         print()
         earnings = 0
-        currentPhrase = allPhrases[n].title()
+        currentPhrase = allPhrases[n]
         blankCurrentPhrase = currentPhrase.lower()
         unusedConsonants = "bcdfghjklmnpqrstvwxyz".upper()
         unboughtVowels = "AEIOU"
