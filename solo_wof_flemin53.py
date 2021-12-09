@@ -99,7 +99,7 @@ def main():
         blankCurrentPhrase = currentPhrase.upper()
         unusedConsonants = "bcdfghjklmnpqrstvwxyz".upper()
         unboughtVowels = "AEIOU"
-        for letter in "ABCDFGHJKLMNPQRSTVWXYZ":
+        for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
             blankCurrentPhrase = blankCurrentPhrase.replace(letter,"_")
         wallet = 0.0
         guessing = False
