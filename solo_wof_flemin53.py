@@ -215,9 +215,9 @@ def main():
 
             if doVowelReplace:
                 currentPhraseLettersList = string_to_list(currentPhrase)
-                if currentPhraseLettersList.count(letterChoice) == 1:
+                if (currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower()))) == 1:
                     print(f"There is {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}.")
-                elif currentPhraseLettersList.count(letterChoice) >=1:
+                elif (currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower()))) >=1:
                     print(f"There are {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}\'s.")
                 else:
                     print("something has been evaluated incorrectly")
