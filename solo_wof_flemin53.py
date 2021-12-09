@@ -265,7 +265,6 @@ def main():
             earnings = 0
         wallet = 0
         print()
-        print()
         print(f"You earned ${earnings:,.0f} this round.")
         print()
         if quitting:
