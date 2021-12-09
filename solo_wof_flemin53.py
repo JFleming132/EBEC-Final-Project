@@ -91,7 +91,7 @@ def main():
     doConsonantReplace = False
     bank = 0
     allPhrases = load_phrases()
-    for n in range(1,5):
+    for n in range(0,4):
         #beginning of round!
         print()
         earnings = 0
