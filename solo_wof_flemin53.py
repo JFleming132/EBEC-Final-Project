@@ -109,7 +109,7 @@ def main():
             #Show menu
             doVowelReplace = False
             doConsonantReplace = False
-            print(f":: Solo WoF :::::::::::::::::::::::::::::: Round {n} of 4 ::")
+            print(f":: Solo WoF :::::::::::::::::::::::::::::: Round {n+1} of 4 ::")
             print("::", end="")
             print(blankCurrentPhrase.center(54),end="")
             print("::")
