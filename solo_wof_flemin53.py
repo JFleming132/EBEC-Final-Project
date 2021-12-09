@@ -115,7 +115,7 @@ def main():
             print("::")
             print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
             print("::   "+unboughtVowels+"   ::   "+unusedConsonants+"   ::",end="")
-            print(("${:,.0f}".format(wallet)).rjust(12),end="::\n")
+            print(("${:,.0f}".format(wallet)).rjust(11),end=" ::\n")
             print("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::")
             while True:
                 print()
