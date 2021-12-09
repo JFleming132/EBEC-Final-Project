@@ -93,7 +93,6 @@ def main():
     allPhrases = load_phrases()
     for n in range(0,4):
         #beginning of round!
-        print()
         earnings = 0
         currentPhrase = allPhrases[n]
         blankCurrentPhrase = currentPhrase.upper()
