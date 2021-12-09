@@ -136,7 +136,7 @@ def main():
                         print(f"The wheel landed on ${space:,.0f}.")
                         while True:
                             letterChoice = input("Pick a consonant: ")
-                            if len(letterChoice) > 1:
+                            if len(letterChoice) > 1 or letterChoice == "":
                                 print("Please enter exactly one character.")
                             elif letterChoice.lower() in "aeiou":
                                 print("Vowels must be purchased.")
