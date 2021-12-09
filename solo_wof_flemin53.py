@@ -96,7 +96,7 @@ def main():
         print()
         earnings = 0
         currentPhrase = allPhrases[n]
-        blankCurrentPhrase = currentPhrase.lower()
+        blankCurrentPhrase = currentPhrase.upper()
         unusedConsonants = "bcdfghjklmnpqrstvwxyz".upper()
         unboughtVowels = "AEIOU"
         for letter in "abcdefghijklmnopqrstuvwxyz":
@@ -224,7 +224,7 @@ def main():
                 indicesToReplace += get_letter_position(letterChoice.lower(),currentPhraseLettersList)
                 blankCurrentPhraseLettersList = string_to_list(blankCurrentPhrase)
                 for index in indicesToReplace:
-                    blankCurrentPhraseLettersList[index] = currentPhraseLettersList[index]
+                    blankCurrentPhraseLettersList[index] = currentPhraseLettersList[index].upper()
                 blankCurrentPhrase = "".join(blankCurrentPhraseLettersList)
             if doConsonantReplace:
                 currentPhraseLettersList = string_to_list(currentPhrase)
@@ -239,7 +239,7 @@ def main():
                 indicesToReplace += get_letter_position(letterChoice.lower(),currentPhraseLettersList)
                 blankCurrentPhraseLettersList = string_to_list(blankCurrentPhrase)
                 for index in indicesToReplace:
-                    blankCurrentPhraseLettersList[index] = currentPhraseLettersList[index]
+                    blankCurrentPhraseLettersList[index] = currentPhraseLettersList[index].upper()
 
                 blankCurrentPhrase = "".join(blankCurrentPhraseLettersList)
 
