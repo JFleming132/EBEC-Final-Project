@@ -240,10 +240,10 @@ def main():
                 indicesToReplaceUpper = get_letter_position(letterChoice.upper(),currentPhraseLettersList)
                 indicesToReplaceLower = get_letter_position(letterChoice.lower(),currentPhraseLettersList)
                 blankCurrentPhraseLettersList = string_to_list(blankCurrentPhrase)
-                for index in indicesToReplaceUpper:
-                    blankCurrentPhraseLettersList[index] = letterChoice.upper()
                 for index in indicesToReplaceLower:
                     blankCurrentPhraseLettersList[index] = letterChoice.lower()
+                for index in indicesToReplaceUpper:
+                    blankCurrentPhraseLettersList[index] = letterChoice.upper()
                 blankCurrentPhrase = "".join(blankCurrentPhraseLettersList)
 
             if guessing:
