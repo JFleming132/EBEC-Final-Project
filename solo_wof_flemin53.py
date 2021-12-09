@@ -83,7 +83,7 @@ def get_letter_position(letter, list_of_letters):
     return letter_positions
 
 def main():
-    """
+
     print("Welcome to Solo Wheel of Fortune!")
     playing = True
     n = 0
@@ -95,7 +95,7 @@ def main():
         #beginning of round!
         print()
         earnings = 0
-        currentPhrase = allPhrases[n]
+        currentPhrase = allPhrases[n].title()
         blankCurrentPhrase = currentPhrase.lower()
         unusedConsonants = "bcdfghjklmnpqrstvwxyz".upper()
         unboughtVowels = "AEIOU"
@@ -269,7 +269,6 @@ def main():
             break
     print()
     print(f"Thanks for playing!\nYou earned a total of ${bank:,}.")
-    """
-    print(load_phrases())
+
 if __name__ == '__main__':
     main()
