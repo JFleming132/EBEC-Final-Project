@@ -268,7 +268,7 @@ def main():
         print()
         if quitting:
             break
-    print(f"Thanks for playing!\nYou earned a total of ${bank:,}.")
+    print(f"Thanks for playing!\nYou earned a total of ${bank:,.0f}.")
 
 if __name__ == '__main__':
     main()
