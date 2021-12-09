@@ -266,9 +266,9 @@ def main():
         wallet = 0
         print()
         print(f"You earned ${earnings:,.0f} this round.")
-        print()
         if quitting:
             break
+    print()
     print()
     print(f"Thanks for playing!\nYou earned a total of ${bank:,}.")
 
