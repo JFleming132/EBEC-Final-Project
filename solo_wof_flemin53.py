@@ -254,7 +254,6 @@ def main():
             break #go to end of game
         elif correctGuess == True:
             print("Ladies and gentlemen, we have a winner!")
-            print()
             if wallet < 1000:
                 wallet = 1000
             bank += wallet
