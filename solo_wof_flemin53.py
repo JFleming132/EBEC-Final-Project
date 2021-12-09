@@ -1,6 +1,6 @@
 """
 Author: Joseph Fleming, flemin53@purdue.edu
-Assignment: mm.n - Solo Wheel of Fortune
+Assignment: mm.n - Solo Wof
 Date: 12/2/2021
 
 Description:
@@ -133,7 +133,7 @@ def main():
                     space = spin_the_wheel()
                     if space != "BANKRUPT":
                         print(f"The wheel landed on ${space:,.0f}.")
-                        while True:
+                        while True: #Handle invalid choices
                             letterChoice = input("Pick a consonant: ")
                             if len(letterChoice) > 1 or letterChoice == "":
                                 print("Please enter exactly one character.")
@@ -146,16 +146,16 @@ def main():
                             elif letterChoice.lower().isalpha():
                                 unusedConsonants = unusedConsonants.replace(letterChoice.upper(), " ")
                                 if letterChoice.upper() in currentPhrase or letterChoice.lower() in currentPhrase:
-                                    doConsonantReplace = True
-                                    break
+                                    doConsonantReplace = True #Flag to do letter replacements at the end of round
+                                    break #leave loop that forces consonants to be valid
                                 else:
                                     print(f"I\'m sorry, there are no {letterChoice.upper()}\'s.")
-                                    break
+                                    break #leave loop that forces consonants to be valid
                             else:
                                 print("Encountered a strange exception. try again please!")
-                        break
+                        break #leave "show menu" loop and go to next stage of round
                     else:
-                        print("The wheel landed on BANKRUPT.")
+                        print("The wheel landed on BANKRUPT.") #Does not run above code at all, and empties wallet
                         print(f"You lost ${wallet:,.0f}!")
                         wallet = 0.0
                         break
@@ -167,7 +167,7 @@ def main():
                         break
                     if wallet > 275:
                         while True:
-                            letterChoice = input("Pick a vowel: ")
+                            letterChoice = input("Pick a vowel: ") #Handles invalid vowel choices
                             if len(letterChoice) != 1 or letterChoice == "":
                                 print("Please enter exactly one character.")
                             elif letterChoice.lower().isalpha() != True:
@@ -179,15 +179,15 @@ def main():
                             elif letterChoice.lower() in "aeiou":
                                 unboughtVowels = unboughtVowels.replace(letterChoice.upper(), " ")
                                 if letterChoice.upper() in currentPhrase or letterChoice.lower() in currentPhrase:
-                                    doVowelReplace = True
+                                    doVowelReplace = True #Flag to do letter replacement at end of round
                                 else:
-                                    print(f"I\'m sorry, there are no {letterChoice.upper()}\'s.")
+                                    print(f"I\'m sorry, there are no {letterChoice.upper()}\'s.") #Does not set the flag, and continues
                                 wallet -= 275
-                                break
-                        break
+                                break #leaves invalid choice loop
+                        break #leaves "show menu" loop
                     else:
-                        print("You need at least $275 to buy a vowel.")
-                        break
+                        print("You need at least $275 to buy a vowel.") #bypassed entirely
+                        break #leaves "show menu" loop
                 elif choice == "3":
                     guessing = True
                     print("Enter your solution.")
@@ -211,7 +211,8 @@ def main():
                     continue
 
 
-
+            #Begin end of round stages
+            #Letter replacements
             if doVowelReplace:
                 currentPhraseLettersList = string_to_list(currentPhrase)
                 if (currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower()))) == 1:
@@ -225,7 +226,8 @@ def main():
                 blankCurrentPhraseLettersList = string_to_list(blankCurrentPhrase)
                 for index in indicesToReplace:
                     blankCurrentPhraseLettersList[index] = currentPhraseLettersList[index].upper()
-                blankCurrentPhrase = "".join(blankCurrentPhraseLettersList)
+                blankCurrentPhrase = "".join(blankCurrentPhraseLettersList) #works by making the current phrase and the blank current phrase into lists, seeing which letters are the same as your letter choice, and updating blank current phrase
+
             if doConsonantReplace:
                 currentPhraseLettersList = string_to_list(currentPhrase)
                 if (currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower()))) == 1:
@@ -240,11 +242,11 @@ def main():
                 blankCurrentPhraseLettersList = string_to_list(blankCurrentPhrase)
                 for index in indicesToReplace:
                     blankCurrentPhraseLettersList[index] = currentPhraseLettersList[index].upper()
-
                 blankCurrentPhrase = "".join(blankCurrentPhraseLettersList)
 
-            if guessing:
-                break
+            #Guess phrase
+            if guessing: #if you have guessed the phrase
+                break #exit round loop
             print()
         #End of round!
         if type(correctGuess) == None:
@@ -266,7 +268,7 @@ def main():
         print(f"You earned ${earnings:,.0f} this round.")
         print()
         if quitting:
-            break
+            break #exit game loop. game loop automatically ends after 4 rounds
 
     print(f"Thanks for playing!\nYou earned a total of ${bank:,.0f}.")
 
