@@ -129,7 +129,7 @@ def main():
                 choice = input("Enter the number of your choice: ")
                 if choice == "1":
                     if unusedConsonants == "                     ":
-                        print("There are no more consonants left to choose.")
+                        print("There are no more consonants to choose.")
                         continue
                     space = spin_the_wheel()
                     if space != "BANKRUPT":
@@ -164,7 +164,7 @@ def main():
 
                 elif choice == "2":
                     if unboughtVowels == "     ":
-                        print("There are no more Vowels left to buy.")
+                        print("There are no more vowels left to buy.")
                         break
                     if wallet > 275:
                         while True:
@@ -188,6 +188,7 @@ def main():
                         break
                     else:
                         print("You need at least $275 to buy a vowel.")
+                        break
                 elif choice == "3":
                     guessing = True
                     print("Enter your solution.")
