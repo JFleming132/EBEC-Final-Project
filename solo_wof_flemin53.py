@@ -169,7 +169,7 @@ def main():
                     if wallet > 275:
                         while True:
                             letterChoice = input("Pick a vowel: ")
-                            if len(letterChoice) != 1:
+                            if len(letterChoice) != 1 or letterChoice = "":
                                 print("Please enter exactly one character.")
                             elif letterChoice.lower().isalpha() != True:
                                 print(f"The character {str(input)} is not a letter.")
