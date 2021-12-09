@@ -133,7 +133,7 @@ def main():
                         continue
                     space = spin_the_wheel()
                     if space != "BANKRUPT":
-                        print(f"The wheel landed on ${space}.")
+                        print(f"The wheel landed on ${"{:,.0f}".format(str(space))}.")
                         while True:
                             letterChoice = input("Pick a consonant: ")
                             if len(letterChoice) > 1:
