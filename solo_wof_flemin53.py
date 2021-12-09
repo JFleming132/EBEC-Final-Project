@@ -130,7 +130,7 @@ def main():
                 if choice == "1":
                     if unusedConsonants == "                     ":
                         print("There are no more consonants to choose.")
-                        continue
+                        break
                     space = spin_the_wheel()
                     if space != "BANKRUPT":
                         print(f"The wheel landed on ${space:,.0f}.")
@@ -216,9 +216,9 @@ def main():
             if doVowelReplace:
                 currentPhraseLettersList = string_to_list(currentPhrase)
                 if currentPhraseLettersList.count(letterChoice) == 1:
-                    print(f"There is {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}")
+                    print(f"There is {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}.")
                 elif currentPhraseLettersList.count(letterChoice) >=1:
-                    print(f"There are {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}\'s")
+                    print(f"There are {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}\'s.")
                 else:
                     print("something has been evaluated incorrectly")
                 indicesToReplace = get_letter_position(letterChoice.upper(),currentPhraseLettersList)
