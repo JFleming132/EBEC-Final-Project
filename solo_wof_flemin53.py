@@ -83,8 +83,8 @@ def get_letter_position(letter, list_of_letters):
     return letter_positions
 
 def main():
-    print()
     print("Welcome to Solo Wheel of Fortune!")
+    print()
     playing = True
     n = 0
     doVowelReplace = False
