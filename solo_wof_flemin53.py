@@ -163,13 +163,13 @@ def main():
 
 
                 elif choice == "2":
-                    if unusedVowels == "     ":
+                    if unboughtVowels == "     ":
                         print("There are no more Vowels left to buy.")
                         break
                     if wallet > 275:
                         while True:
                             letterChoice = input("Pick a vowel: ")
-                            if len(letterChoice) != 1 or letterChoice = "":
+                            if len(letterChoice) != 1 or letterChoice == "":
                                 print("Please enter exactly one character.")
                             elif letterChoice.lower().isalpha() != True:
                                 print(f"The character {str(input)} is not a letter.")
@@ -220,13 +220,11 @@ def main():
                     print(f"There are {(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))} {letterChoice.upper()}\'s")
                 else:
                     print("something has been evaluated incorrectly")
-                indicesToReplaceUpper = get_letter_position(letterChoice.upper(),currentPhraseLettersList)
-                indicesToReplaceLower = get_letter_position(letterChoice.lower(),currentPhraseLettersList)
+                indicesToReplace = get_letter_position(letterChoice.upper(),currentPhraseLettersList)
+                indicesToReplace += get_letter_position(letterChoice.lower(),currentPhraseLettersList)
                 blankCurrentPhraseLettersList = string_to_list(blankCurrentPhrase)
-                for index in indicesToReplaceUpper:
-                    blankCurrentPhraseLettersList[index] = letterChoice.upper()
-                for index in indicesToReplaceLower:
-                    blankCurrentPhraseLettersList[index] = letterChoice.lower()
+                for index in indicesToReplace:
+                    blankCurrentPhraseLettersList[index] = currentPhraseLettersList[index]
                 blankCurrentPhrase = "".join(blankCurrentPhraseLettersList)
             if doConsonantReplace:
                 currentPhraseLettersList = string_to_list(currentPhrase)
@@ -237,13 +235,12 @@ def main():
                 else:
                     print("something has been evaluated incorrectly")
                 wallet += space*(currentPhraseLettersList.count(letterChoice.upper())+(currentPhraseLettersList.count(letterChoice.lower())))
-                indicesToReplaceUpper = get_letter_position(letterChoice.upper(),currentPhraseLettersList)
-                indicesToReplaceLower = get_letter_position(letterChoice.lower(),currentPhraseLettersList)
+                indicesToReplace = get_letter_position(letterChoice.upper(),currentPhraseLettersList)
+                indicesToReplace += get_letter_position(letterChoice.lower(),currentPhraseLettersList)
                 blankCurrentPhraseLettersList = string_to_list(blankCurrentPhrase)
-                for index in indicesToReplaceLower:
-                    blankCurrentPhraseLettersList[index] = letterChoice.lower()
-                for index in indicesToReplaceUpper:
-                    blankCurrentPhraseLettersList[index] = letterChoice.upper()
+                for index in indicesToReplace:
+                    blankCurrentPhraseLettersList[index] = currentPhraseLettersList[index]
+
                 blankCurrentPhrase = "".join(blankCurrentPhraseLettersList)
 
             if guessing:
