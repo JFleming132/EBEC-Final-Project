@@ -161,6 +161,7 @@ def main():
                         wallet = 0.0
                         break
 
+
                 elif choice == "2":
                     if unusedVowels == "     ":
                         print("There are no more Vowels left to buy.")
@@ -209,6 +210,8 @@ def main():
                     print("Please input an appropriate choice.")
                     continue
 
+
+
             if doVowelReplace:
                 currentPhraseLettersList = string_to_list(currentPhrase)
                 if currentPhraseLettersList.count(letterChoice) == 1:
@@ -245,6 +248,7 @@ def main():
 
             if guessing:
                 break
+            print()
         #End of round!
         if type(correctGuess) == None:
             earnings = 0
@@ -267,7 +271,7 @@ def main():
         if quitting:
             break
     print()
-    print(f"Thanks for playing!\nYou earned a total of ${bank:,}")
+    print(f"Thanks for playing!\nYou earned a total of ${bank:,}.")
 
 if __name__ == '__main__':
     main()
